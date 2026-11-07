@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+      Only the APK-extraction output is exposed. Nothing else under filesDir
+      (databases, prefs, caches) can ever be shared through this provider.
+    -->
+    <files-path
+        name="apk_extract"
+        path="apk_extract/" />
+</paths>

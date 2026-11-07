@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      QUERY_ALL_PACKAGES: list ALL installed apps (required on Android 11+).
+      Rationale (Play Console declaration if ever published): core function of
+      this app is package management / viewing.
+      NOTE: This is the reason we distribute via GitHub Releases / F-Droid
+      instead of Google Play.
+    -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <!-- Allows launching the system uninstall dialog for user apps. -->
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <!--
+      V3 B2: read app usage statistics (last used / foreground time / launch
+      count) for the "which apps should I clean" view. This is a special,
+      non-runtime permission granted via Settings > Special app access >
+      Usage access; it is NOT prompted at install and is OFF by default. The UI
+      hides the entire usage feature when it is not granted (iron rule: never
+      treat a blank result as "zero usage").
+    -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--
+      Only needed so that extracted APKs can also be published to the public
+      Download folder on API 24-28. From API 29 we use MediaStore, which needs
+      no permission at all.
+    -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <application
+        android:name=".AppManagerApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppManager">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppManager">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    <!--
+          Grants read access ONLY to filesDir/apk_extract so extracted APKs
+          can be handed to the share sheet / installer. Exported is required
+          for a FileProvider to serve other apps; no other path is mapped.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

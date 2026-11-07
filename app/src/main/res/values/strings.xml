@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">云麓空间</string>
+
+    <!-- List screen -->
+    <string name="tab_user_apps">用户应用</string>
+    <string name="tab_system_apps">系统应用</string>
+    <string name="search_hint">搜索名称或包名</string>
+    <string name="sort_by_name">按名称</string>
+    <string name="sort_by_size">按大小</string>
+    <string name="sort_by_install_time">按安装时间</string>
+    <string name="sort_label">排序方式</string>
+    <string name="settings_title">设置</string>
+    <string name="empty_list">没有匹配的应用</string>
+    <string name="selection_count">已选 %1$d 项</string>
+    <string name="action_uninstall_selected">卸载所选</string>
+    <string name="action_select_all">全选</string>
+    <string name="action_exit_selection">退出多选</string>
+    <string name="menu_app_detail">应用详情</string>
+    <string name="menu_uninstall">卸载</string>
+
+    <!-- Detail screen -->
+    <string name="detail_open">打开</string>
+    <string name="detail_app_info">应用信息</string>
+    <string name="detail_uninstall">卸载</string>
+    <string name="detail_system_app_notice">系统应用。针对当前用户的卸载需 Shizuku/Root（V1.0 支持），误删可能导致系统异常。</string>
+    <string name="detail_section_basic">基本信息</string>
+    <string name="detail_section_permissions">权限</string>
+    <string name="detail_field_package">包名</string>
+    <string name="detail_field_version">版本</string>
+    <string name="detail_field_sdk">SDK 要求</string>
+    <string name="detail_field_first_install">首次安装</string>
+    <string name="detail_field_last_update">最近更新</string>
+    <string name="detail_field_installer">安装来源</string>
+    <string name="detail_field_apk_size">APK 大小</string>
+    <string name="detail_field_source_path">APK 路径</string>
+    <string name="detail_permission_granted">已授权</string>
+    <string name="detail_permission_denied">未授权</string>
+    <string name="detail_permission_dangerous">危险权限</string>
+    <string name="detail_no_permissions">该应用未声明任何权限</string>
+    <string name="detail_app_disabled">已停用</string>
+    <string name="detail_cannot_launch">无法启动该应用</string>
+
+    <!-- APK extraction -->
+    <string name="extract_title">提取安装包</string>
+    <string name="detail_extract">提取安装包</string>
+    <string name="extract_mode_title">选择提取方式</string>
+    <string name="extract_mode_base">仅主包（单个 APK）</string>
+    <string name="extract_mode_base_desc">体积最小，但无法安装带配置分片的应用</string>
+    <string name="extract_mode_full">完整分片集（推荐）</string>
+    <string name="extract_mode_full_desc">包含 base.apk 与全部配置分片，可正常安装</string>
+    <string name="extract_running">正在提取…</string>
+    <string name="extract_done">已提取 %1$d 个文件，共 %2$s</string>
+    <string name="extract_share">分享</string>
+    <string name="extract_save">保存到下载目录</string>
+    <string name="extract_close">关闭</string>
+    <string name="extract_saved">已保存 %1$d 个文件到「下载/云麓空间」</string>
+    <string name="extract_no_share">没有可分享的文件</string>
+    <string name="extract_split_warning">当前应用含配置分片，仅提取主包无法直接安装。</string>
+    <string name="extract_list_header">已提取文件</string>
+    <string name="extract_path_label">保存位置（应用私有目录）</string>
+    <string name="extract_storage_permission_needed">Android 9 及以下保存到下载目录需要存储权限，请授权或改用「分享」。</string>
+    <string name="extract_err_gone">该应用已不存在</string>
+    <string name="extract_err_no_source">无法读取该应用的安装包，可能已被系统保护</string>
+    <string name="extract_err_mkdir">无法创建保存目录</string>
+    <string name="extract_err_empty">没有可提取的文件</string>
+    <string name="extract_err_save">保存到下载目录失败，请改用「分享」</string>
+    <string name="extract_err_copy">复制文件时出错</string>
+    <string name="extract_no_split_app">该应用为单 APK，无需分片集</string>
+    <string name="settings_clear_extracted">清理已提取的安装包</string>
+    <string name="settings_clear_extracted_done">已清理 %1$d 个提取记录</string>
+
+    <!-- Uninstall -->
+    <string name="uninstall_done">卸载完成</string>
+    <string name="uninstall_canceled">已取消卸载</string>
+    <string name="uninstall_failed">卸载失败</string>
+    <string name="uninstall_self_error">不能卸载本管理器自身</string>
+    <string name="uninstall_system_notice">系统应用暂不支持在应用内卸载</string>
+    <string name="uninstall_batch_notice">将逐项弹出系统确认框</string>
+
+    <!-- Settings -->
+    <string name="settings_about">关于</string>
+    <string name="settings_version">版本</string>
+    <string name="settings_privacy">隐私说明</string>
+    <string name="settings_privacy_body">本应用不申请网络权限，不采集、不上传任何数据，所有操作均在本地完成。</string>
+    <string name="settings_permission_note">权限说明</string>
+    <string name="settings_permission_body">「查看全部应用」需要 QUERY_ALL_PACKAGES 权限（Android 11+ 自动授予）；卸载通过系统卸载界面由你确认；提取安装包只读取系统分区、不做任何修改，Android 9 及以下在保存到下载目录时需存储权限。</string>
+    <string name="settings_extracted_title">已提取的安装包</string>
+    <string name="settings_extracted_summary">共 %1$d 份，占用 %2$s</string>
+    <string name="settings_extracted_empty">尚未提取任何安装包。在应用详情页点击「提取安装包」即可导出。</string>
+    <string name="settings_extracted_action">全部清理</string>
+    <string name="settings_open_extract_dir">打开提取目录</string>
+    <string name="settings_open_dir_empty">还没有提取的安装包</string>
+    <string name="settings_open_dir_failed">打开目录失败，请手动前往「下载/云麓空间」</string>
+
+    <!-- V3 B1 storage -->
+    <string name="sort_by_storage">按占用</string>
+    <string name="storage_user_apps">用户应用</string>
+    <string name="storage_system_apps">系统应用</string>
+    <string name="storage_cache">缓存</string>
+    <string name="storage_loading">正在统计占用…</string>
+    <string name="storage_unavailable">无法读取存储用量</string>
+    <string name="detail_section_storage">存储占用</string>
+    <string name="storage_apk">安装包 (APK)</string>
+    <string name="storage_data">应用数据</string>
+    <string name="storage_external">外部缓存</string>
+    <string name="storage_aot">AOT 编译产物</string>
+    <string name="storage_total">合计占用</string>
+    <string name="storage_page_title">存储空间</string>
+    <string name="storage_device_total">总容量</string>
+    <string name="storage_device_used">已用</string>
+    <string name="storage_device_free">可用</string>
+    <string name="storage_segment_user">用户应用</string>
+    <string name="storage_segment_system">系统应用</string>
+    <string name="storage_segment_other">系统与其他</string>
+    <string name="storage_segment_free">可用空间</string>
+
+    <!-- V3 B2 usage stats -->
+    <string name="sort_by_last_used">按最近使用</string>
+    <string name="sort_by_usage_duration">按使用时长</string>
+    <string name="sort_by_launch_count">按启动次数</string>
+    <string name="filter_idle_only">仅显示闲置</string>
+    <string name="filter_idle_hint">连续 30 天未使用</string>
+    <string name="usage_section">使用统计</string>
+    <string name="usage_last_used">最近使用</string>
+    <string name="usage_foreground">前台时长</string>
+    <string name="usage_launch_count">启动次数</string>
+    <string name="usage_no_data">暂无使用记录</string>
+    <string name="usage_no_permission">未开启使用统计权限，无法统计使用情况。</string>
+    <string name="usage_open_settings">去开启</string>
+</resources>
