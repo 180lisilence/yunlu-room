@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>云麓空间 · 本机应用管理器（双端）</title>
+<style>
+  :root{
+    --bg:#0f1117; --panel:#171a24; --panel-2:#1e2230; --line:#2a2f3e;
+    --text:#e7ebf3; --muted:#9aa3b5; --accent:#6aa1ff; --accent-2:#7ee0c0;
+    --pc:#6aa1ff; --android:#3ddc84; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 600px at 80% -10%,#1b2740 0%,transparent 60%),
+               radial-gradient(900px 500px at -10% 10%,#15302a 0%,transparent 55%),
+               var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  header.hero{padding:72px 0 40px;text-align:center}
+  .badge{display:inline-block;font-size:13px;letter-spacing:.5px;color:var(--muted);
+    border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:22px;background:var(--panel)}
+  h1{font-size:46px;line-height:1.15;margin:0 0 14px;font-weight:800;
+    background:linear-gradient(90deg,var(--pc),var(--android));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:18px;color:var(--muted);max-width:680px;margin:0 auto 28px}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  a.btn{text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;
+    border:1px solid var(--line);background:var(--panel-2);color:var(--text);transition:.2s}
+  a.btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+  a.btn.primary{background:linear-gradient(90deg,var(--pc),#8fb6ff);color:#0b1020;border:none}
+  a.btn.android{background:linear-gradient(90deg,var(--android),#9af0cf);color:#06231a;border:none}
+  section{padding:40px 0}
+  h2{font-size:26px;margin:0 0 8px;font-weight:700}
+  .lead{color:var(--muted);margin:0 0 26px;max-width:760px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+    position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px}
+  .card.pc::before{background:var(--pc)}
+  .card.android::before{background:var(--android)}
+  .card h3{margin:0 0 4px;font-size:21px}
+  .card .tag{font-size:13px;color:var(--muted);margin-bottom:16px;display:block}
+  .card ul{margin:0;padding-left:18px;color:var(--text)}
+  .card li{margin:7px 0}
+  .chips{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:5px 10px;color:var(--muted);background:var(--panel-2)}
+  .links{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+  .links a{font-size:14px;color:var(--accent);text-decoration:none}
+  .links a:hover{text-decoration:underline}
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .feat .f{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .feat .f h4{margin:0 0 6px;font-size:16px}
+  .feat .f p{margin:0;color:var(--muted);font-size:14px}
+  .privacy{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);
+    border-radius:var(--radius);padding:26px}
+  .privacy b{color:var(--accent-2)}
+  .branch{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .branch .b{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .branch .b code{color:var(--accent);font-size:14px}
+  .branch .b p{color:var(--muted);font-size:14px;margin:8px 0 0}
+  footer{padding:50px 0 70px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:30px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media (max-width:820px){.grid2,.feat,.branch{grid-template-columns:1fr}h1{font-size:36px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="badge">双端 · Windows PC + Android · 纯本地</span>
+      <h1>云麓空间</h1>
+      <p class="sub">一套覆盖桌面与移动端的本机应用管理器：查看、搜索、排序、卸载你设备上安装的程序与 App，所有数据本地处理，<b>不上传任何信息</b>。</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/180lisilence/yunlu-room/tree/pc">Windows PC 版</a>
+        <a class="btn android" href="https://github.com/180lisilence/yunlu-room/tree/android">Android 版</a>
+        <a class="btn" href="https://github.com/180lisilence/yunlu-room">GitHub 仓库</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>项目简介</h2>
+      <p class="lead">「云麓空间」是一个对标手机系统「应用管理」能力的本机工具集。它不依赖云端、不收集数据，只读取你本机已安装软件的信息，帮助你快速整理、定位与卸载。目前提供两个独立形态：</p>
+      <div class="grid2">
+        <div class="card pc">
+          <h3>云麓空间 · PC 版</h3>
+          <span class="tag">Windows 桌面端 · Python + Tkinter</span>
+          <ul>
+            <li>读取注册表三处卸载项，列出全机/用户已安装程序</li>
+            <li>按名称 / 发行商实时搜索，支持分组与排序</li>
+            <li>卸载走系统向导、可打开安装目录、复制卸载命令</li>
+            <li>零依赖（仅 Python 标准库），已打包为 exe</li>
+          </ul>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">注册表只读</span><span class="chip">exe 可直接运行</span></div>
+          <div class="links">
+            <a href="https://github.com/180lisilence/yunlu-room/tree/pc">查看源码与说明 →</a>
+            <a href="https://github.com/180lisilence/yunlu-room/blob/pc/%E4%BA%91%E9%BA%93%E7%A9%BA%E9%97%B4PC%E7%89%88.exe">下载 exe（发布构建）</a>
+          </div>
+        </div>
+        <div class="card android">
+          <h3>云麓空间 · Android 版</h3>
+          <span class="tag">Android 移动端 · Kotlin + Jetpack Compose</span>
+          <ul>
+            <li>用户/系统应用分组、搜索、排序、APK 大小/版本副标题</li>
+            <li>单个与批量卸载，全部走系统确认界面</li>
+            <li>应用详情：权限列表、安装来源、APK 提取与分享</li>
+            <li>安装/卸载后通过系统广播实时刷新列表</li>
+          </ul>
+          <div class="chips"><span class="chip">Kotlin</span><span class="chip">Compose</span><span class="chip">Material 3</span><span class="chip">Hilt</span><span class="chip">MVVM</span></div>
+          <div class="links">
+            <a href="https://github.com/180lisilence/yunlu-room/tree/android">查看源码与说明 →</a>
+            <a href="https://github.com/180lisilence/yunlu-room/blob/android/%E4%BA%91%E9%BA%93%E7%A9%BA%E9%97%B4-v1.0.0.001-release-aligned-signed.apk">下载 APK（V1.0.0.001 正式签名版）</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>功能亮点</h2>
+      <div class="feat">
+        <div class="f"><h4>本机优先</h4><p>所有数据来自本机注册表 / PackageManager，离线可用，不联网。</p></div>
+        <div class="f"><h4>隐私友好</h4><p>无网络权限、不收集、不上传。卸载一律走系统界面由用户确认。</p></div>
+        <div class="f"><h4>双端一致</h4><p>PC 与 Android 同一套产品理念，桌面与移动无缝衔接管理体验。</p></div>
+        <div class="f"><h4>开箱即用</h4><p>PC 版已编译 exe；Android 版提供已签名 release APK，可直装。</p></div>
+        <div class="f"><h4>透明可读</h4><p>源码开放，扫描逻辑、卸载流程、权限用途全部可查。</p></div>
+        <div class="f"><h4>持续演进</h4><p>Android 版已进入 V3 开发线（存储可视化、清理、管控等）。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>隐私与安全</h2>
+      <div class="privacy">
+        <p><b>无网络权限</b>：两个版本均不申请任何网络权限，所有处理在本地完成。</p>
+        <p><b>只读扫描</b>：PC 版读取注册表卸载项仅为展示，不修改系统；Android 版提取安装包只读取系统分区、不改动任何系统文件。</p>
+        <p><b>不静默卸载</b>：卸载一律调用系统卸载界面，由用户在系统中确认，工具本身不做任何静默删除。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>仓库分支导航</h2>
+      <p class="lead">本仓库按「双端」拆分为独立分支，main 分支为该介绍页。请按需切换到对应分支获取源码与构建：</p>
+      <div class="branch">
+        <div class="b"><code>main</code><p>本介绍页与项目总览（你正在看的分支）。</p></div>
+        <div class="b"><code>pc</code><p>Windows PC 版源码、README 与已编译 exe。</p></div>
+        <div class="b"><code>android</code><p>Android 版工程、方案文档与已签名 release APK。</p></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>云麓空间 · 本机应用管理器 &nbsp;|&nbsp; <a href="https://github.com/180lisilence/yunlu-room">github.com/180lisilence/yunlu-room</a></p>
+      <p>纯本地工具，数据不上云。欢迎按分支取用与二次开发。</p>
+    </footer>
+  </div>
+</body>
+</html>
